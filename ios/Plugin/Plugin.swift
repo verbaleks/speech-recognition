@@ -11,7 +11,7 @@ public class SpeechRecognition: CAPPlugin {
     let messageRestricted = "Speech recognition restricted on this device"
     let messageNotDetermined = "Speech recognition not determined on this device"
     let messageAccessDeniedMicrophone = "User denied access to microphone"
-    let microphoneAlredyUsed = "Microphone is being used by another application"
+    let microphoneAlreadyUsed = "Microphone is being used by another application"
     let messageOngoing = "Ongoing speech recognition"
     let messageUnknown = "Unknown error occured"
 
@@ -83,7 +83,7 @@ public class SpeechRecognition: CAPPlugin {
             let formatIsValid = (format.channelCount == 1 && format.sampleRate > 0)
 
             if !formatIsValid {
-                call.reject(self.microphoneAlredyUsed)
+                call.reject(self.microphoneAlreadyUsed)
                 return
             }
 
